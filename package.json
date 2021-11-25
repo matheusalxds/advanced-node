@@ -1,0 +1,7 @@
+{
+  "name": "advanced-clean-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matheus Alexandre <mathe.system@gmail.com>",
+  "license": "MIT"
+}
