@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/main/api",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "module-alias": "^2.2.2",
@@ -15,7 +17,13 @@
   "devDependencies": {
     "@types/module-alias": "^2.0.1",
     "@types/node": "^16.11.10",
-    "typescript": "^4.5.2"
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "eslint": "^7.12.1",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.0.0",
+    "typescript": "*"
   },
   "engines": {
     "node": "16.x"
