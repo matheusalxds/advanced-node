@@ -6,6 +6,7 @@ describe('FacebookAccount', () => {
     email: 'any_fb_email',
     facebookId: 'any_fb_id'
   }
+
   test('should create with facebook data only', () => {
     const sut = new FacebookAccount(fbData)
     expect(sut).toEqual(fbData)
