@@ -2,5 +2,9 @@
   "extends": "standard-with-typescript",
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": 0,
+    "@typescript-eslint/no-namespace": 0
   }
 }
