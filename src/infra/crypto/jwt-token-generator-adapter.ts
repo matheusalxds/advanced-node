@@ -2,7 +2,7 @@ import { TokenGenerator } from '@/data/contracts/crypto'
 
 import jwt from 'jsonwebtoken'
 
-export class JwtTokenGeneratorAdapter {
+export class JwtTokenGeneratorAdapter implements TokenGenerator {
   constructor (private readonly secret: string) {}
 
   async generateToken (params: TokenGenerator.Params): Promise<TokenGenerator.Result> {
