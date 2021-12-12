@@ -1,4 +1,4 @@
-import { adaptExpressRoute } from '@/infra/http'
+import { adaptExpressRoute } from '@/main/adapters'
 import { Controller } from '@/application/controllers'
 
 import { getMockReq, getMockRes } from '@jest-mock/express'
