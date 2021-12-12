@@ -24,5 +24,23 @@
      Pass: abc@12345
      ````
 
+> ## Code Smells (Anti-Patterns)
+
+* Blank Lines
+* Comments
+* Data Clumps
+* Divergent Change (solve by Single responsability)
+* Duplicated Code (solve by DRY)
+* Inappropriate Intimacy
+* Feature Envy
+* Large Class
+* Long Method
+* Long Parameter List
+* Middle Man
+* Primitive Obsession
+* Refused Bequest
+* Shotgun Surgery
+* Speculative Generality (YAGNI)
+
 > You can verify if Node has support on [NodeGreen](https://node.green).
 
