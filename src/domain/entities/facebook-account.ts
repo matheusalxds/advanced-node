@@ -9,6 +9,7 @@ type AccountData = {
   name?: string
 }
 
+// business class
 export class FacebookAccount {
   id?: string
   name: string

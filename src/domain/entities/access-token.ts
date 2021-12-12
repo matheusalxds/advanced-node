@@ -1,3 +1,4 @@
+// Value object
 export class AccessToken {
   constructor (readonly value: string) {}
 
