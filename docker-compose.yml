@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: postgres-container
+    image: 'postgres'
+    restart: always
+    environment:
+      POSTGRES_DB: 'advanced-node'
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresq

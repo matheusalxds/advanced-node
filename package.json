@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/main",
+    "start:dev": "yarn build && yarn start",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",

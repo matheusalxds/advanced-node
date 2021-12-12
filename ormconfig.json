@@ -1,0 +1,10 @@
+{
+  "type": "postgres",
+  "host": "castor.db.elephantsql.com",
+  "port": 5432,
+  "username": "cfxojtbr",
+  "password": "vyUuPQYRQYDLydbUk9pA_Wsnc_HvuBOn",
+  "database": "cfxojtbr",
+  "entities": ["dist/infra/postgres/entities/index.js"],
+  "synchronize": true
+}
