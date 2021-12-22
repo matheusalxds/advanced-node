@@ -10,7 +10,7 @@ type Setup = (
   crypto: TokenGenerator
 ) => FacebookAuthentication
 type Input = { token: string }
-type Output = {accessToken: string }
+type Output = { accessToken: string }
 export type FacebookAuthentication = (params: Input) => Promise<Output>
 
 export const setupFacebookAuthentication: Setup = (facebookApi, userAccountRepo, crypto) =>
