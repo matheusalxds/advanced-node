@@ -7,7 +7,7 @@ import request from 'supertest'
 import { sign } from 'jsonwebtoken'
 
 describe('Authentication Middleware', () => {
-  test('should return 403 if authorization header was not provide', async () => {
+  test('should return 403 if authorization header was not provided', async () => {
     app.get('/fake_route', auth)
 
     const { status, body } = await request(app).get('/fake_route')
