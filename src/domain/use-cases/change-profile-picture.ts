@@ -9,7 +9,8 @@ export const setupChangeProfilePicture: Setup = (fileStorage, crpyto, userProfil
   let pictureUrl: string | undefined
   if (file !== undefined) {
     pictureUrl = await fileStorage.upload({ file, key: crpyto.uuid({ key: id }) })
+  } else {
+    await userProfileRepo.load({ id })
   }
   await userProfileRepo.savePicture({ pictureUrl })
-  await userProfileRepo.load({ id })
 }
