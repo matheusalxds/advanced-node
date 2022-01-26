@@ -33,7 +33,7 @@ describe('ChangeProfilePicture', () => {
     expect(fileStorage.upload).toHaveBeenCalledTimes(1)
   })
 
-  test('should call UploadFile when file is undefined', async () => {
+  test('should not call UploadFile when file is undefined', async () => {
     await sut({ id: 'any_id', file: undefined })
 
     expect(fileStorage.upload).not.toHaveBeenCalled()
@@ -43,6 +43,13 @@ describe('ChangeProfilePicture', () => {
     await sut({ id: 'any_id', file })
 
     expect(userProfileRepo.savePicture).toHaveBeenCalledWith({ pictureUrl: 'any_url' })
+    expect(userProfileRepo.savePicture).toHaveBeenCalledTimes(1)
+  })
+
+  test('should call SaveUserPicture with correct input', async () => {
+    await sut({ id: 'any_id', file: undefined })
+
+    expect(userProfileRepo.savePicture).toHaveBeenCalledWith({ pictureUrl: undefined })
     expect(userProfileRepo.savePicture).toHaveBeenCalledTimes(1)
   })
 })
