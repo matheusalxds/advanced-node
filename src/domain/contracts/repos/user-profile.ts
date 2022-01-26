@@ -3,5 +3,5 @@ export interface SaveUserPicture {
 }
 
 export namespace SaveUserPicture {
-  export type Params = { pictureUrl: string }
+  export type Params = { pictureUrl?: string }
 }
