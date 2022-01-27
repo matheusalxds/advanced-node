@@ -58,12 +58,9 @@ describe('FacebookAuthentication', () => {
   })
 
   test('should call SaveFacebookAccount with FacebookAccount', async () => {
-    const FacebookAccountStub = jest.fn().mockImplementation(() => ({ any: 'any' }))
-    mocked(FacebookAccount).mockImplementation(FacebookAccountStub)
-
     await sut({ token })
 
-    expect(userAccountRepo.saveWithFacebook).toHaveBeenCalledWith({ any: 'any' })
+    expect(userAccountRepo.saveWithFacebook).toHaveBeenCalledWith(mocked(FacebookAccount).mock.instances[0])
     expect(userAccountRepo.saveWithFacebook).toHaveBeenCalledTimes(1)
   })
 

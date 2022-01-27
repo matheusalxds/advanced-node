@@ -1,3 +1,4 @@
+import { UserProfile } from '@/domain/entities'
 import { SaveUserPicture, LoadUserProfile } from '@/domain/contracts/repos'
 import { UploadFile, UUIDGenerator } from '@/domain/contracts/gateways'
 
@@ -6,21 +7,13 @@ type Input = { id: string, file?: Buffer }
 export type ChangeProfilePicture = (input: Input) => Promise<void>
 
 export const setupChangeProfilePicture: Setup = (fileStorage, crpyto, userProfileRepo) => async ({ id, file }) => {
-  let pictureUrl: string | undefined
-  let initials: string | undefined
+  const data: {pictureUrl?: string | undefined, name?: string | undefined } = {}
   if (file !== undefined) {
-    pictureUrl = await fileStorage.upload({ file, key: crpyto.uuid({ key: id }) })
+    data.pictureUrl = await fileStorage.upload({ file, key: crpyto.uuid({ key: id }) })
   } else {
-    const { name } = await userProfileRepo.load({ id })
-
-    if (name !== undefined) {
-      const firstLetters = name.match(/\b(.)/g) ?? []
-      if (firstLetters.length > 1) {
-        initials = `${firstLetters.shift()?.toUpperCase() ?? ''}${firstLetters.pop()?.toUpperCase() ?? ''}`
-      } else {
-        initials = name.substring(0, 2)?.toUpperCase()
-      }
-    }
+    data.name = (await userProfileRepo.load({ id })).name
   }
-  await userProfileRepo.savePicture({ pictureUrl, initials })
+  const userProfile = new UserProfile(id)
+  userProfile.setPicture(data)
+  await userProfileRepo.savePicture(userProfile)
 }
