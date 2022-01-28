@@ -28,7 +28,8 @@
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "typeorm": "0.2.29"
+    "typeorm": "0.2.29",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@jest-mock/express": "^1.4.5",
@@ -40,6 +41,7 @@
     "@types/module-alias": "^2.0.1",
     "@types/node": "^16.11.10",
     "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "eslint": "^7.12.1",
     "eslint-config-standard-with-typescript": "^21.0.1",

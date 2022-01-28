@@ -8,6 +8,7 @@
     "@typescript-eslint/no-namespace": 0,
     "@typescript-eslint/return-await": 0,
     "@typescript-eslint/strict-boolean-expressions": 0,
-    "@typescript-eslint/no-non-null-assertion": 0
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/restrict-template-expressions": 0
   }
 }
