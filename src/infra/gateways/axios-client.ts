@@ -1,4 +1,4 @@
-import { HttpGetClient } from '@/infra/http/client'
+import { HttpGetClient } from '@/infra/gateways/client'
 import axios from 'axios'
 
 type Params = HttpGetClient.Params
