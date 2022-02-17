@@ -1,21 +1,4 @@
-import { UUIDGenerator } from '@/domain/contracts/gateways'
-
-class UniqueId implements UUIDGenerator {
-  constructor (private readonly date: Date) { }
-
-  uuid ({ key }: UUIDGenerator.Input): UUIDGenerator.Ouput {
-    return (
-      key +
-      '_' +
-      this.date.getFullYear() +
-      (this.date.getMonth() + 1).toString().padStart(2, '0') +
-      this.date.getDate().toString().padStart(2, '0') +
-      this.date.getHours().toString().padStart(2, '0') +
-      this.date.getMinutes().toString().padStart(2, '0') +
-      this.date.getSeconds().toString().padStart(2, '0')
-    )
-  }
-}
+import { UniqueId } from '@/infra/crypto'
 
 describe('UniqueId', () => {
   test('should call uuid.v4', () => {
