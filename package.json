@@ -16,7 +16,7 @@
     "test:staged": "npm t -- --findRelatedTests",
     "test:coverage": "npm t -- --coverage",
     "prepare": "husky install",
-    "test:fb-api": "npm  t -- -c ./jest.integration.config.js tests/external/facebook-api.test.ts",
+    "test:fb-api": "npm  t -- -c ./jest.integration.config.js tests/infra/gateways/facebook-api.test.ts",
     "jest:clearCache": "jest --clearCache"
   },
   "dependencies": {
