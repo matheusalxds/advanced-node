@@ -4,7 +4,7 @@ import { FacebookAuthentication, setupFacebookAuthentication } from '@/domain/us
 import { LoadFacebookUser, TokenGenerator } from '@/domain/contracts/gateways'
 import { SaveFacebookAccount, LoadUserAccount } from '@/domain/contracts/repos'
 
-import { mocked } from 'ts-jest/utils'
+import { mocked } from 'jest-mock'
 import { mock, MockProxy } from 'jest-mock-extended'
 
 jest.mock('@/domain/entities/facebook-account')

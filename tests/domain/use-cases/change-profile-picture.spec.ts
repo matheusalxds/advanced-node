@@ -4,7 +4,7 @@ import { DeleteFile, UploadFile, UUIDGenerator } from '@/domain/contracts/gatewa
 import { LoadUserProfile, SaveUserPicture } from '@/domain/contracts/repos'
 
 import { mock, MockProxy } from 'jest-mock-extended'
-import { mocked } from 'ts-jest/utils'
+import { mocked } from 'jest-mock'
 
 jest.mock('@/domain/entities/user-profile')
 
