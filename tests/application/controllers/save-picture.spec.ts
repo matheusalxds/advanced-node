@@ -1,5 +1,5 @@
 import { Controller, SavePictureController } from '@/application/controllers'
-import { AllowedMimeTypes, MaxFileSize, Required, RequiredBuffer, RequiredString } from '@/application/validation'
+import { AllowedMimeTypes, MaxFileSize, Required, RequiredBuffer } from '@/application/validation'
 
 describe('SavePictureController', () => {
   let sut: SavePictureController
@@ -39,7 +39,7 @@ describe('SavePictureController', () => {
   test('should call ChangeProfilePicture with correct input', async () => {
     await sut.handle({ file, userId })
 
-    expect(changeProfilePicture).toHaveBeenCalledWith({ id: userId, file: buffer })
+    expect(changeProfilePicture).toHaveBeenCalledWith({ id: userId, file })
     expect(changeProfilePicture).toHaveBeenCalledTimes(1)
   })
 
