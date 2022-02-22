@@ -15,7 +15,8 @@
     "test:watch": "npm t -- --watch",
     "test:staged": "npm t -- --findRelatedTests",
     "test:coverage": "npm t -- --coverage",
-    "test:fb-api": "npm  t -- -c ./jest.integration.config.js tests/infra/gateways/facebook-api.test.ts",
+    "test:fb-api": "npm  t -- -c ./jest.integration.config.js tests/infra/external/facebook-api.test.ts",
+    "test:s3": "npm  t -- -c ./jest.integration.config.js tests/infra/external/aws-s3-file-storage.test.ts",
     "jest:clearCache": "jest --clearCache",
     "check": "npm-check -s -u",
     "prepare": "husky install"
