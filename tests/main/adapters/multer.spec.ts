@@ -1,8 +1,9 @@
+import { ServerError } from '@/application/errors'
+
 import { NextFunction, RequestHandler, Request, Response } from 'express'
 import { getMockReq, getMockRes } from '@jest-mock/express'
 import { mocked } from 'jest-mock'
 import multer from 'multer'
-import { ServerError } from '@/application/errors'
 
 jest.mock('multer')
 
@@ -46,7 +47,7 @@ describe('MulterAdapter', () => {
     sut = adaptMulter
   })
 
-  test('should call singe upload with correct input', async () => {
+  test('should call single upload with correct input', () => {
     sut(req, res, next)
 
     expect(multerSpy).toHaveBeenCalledWith()
@@ -57,9 +58,9 @@ describe('MulterAdapter', () => {
     expect(uploadSpy).toHaveBeenCalledTimes(1)
   })
 
-  test('should return 500 if upload fails', async () => {
+  test('should return 500 if upload fails', () => {
     const error = new Error('multer_error')
-    uploadSpy = jest.fn().mockImplementationOnce((req, res, next) => {
+    uploadSpy.mockImplementationOnce((req, res, next) => {
       next(error)
     })
 
@@ -71,8 +72,8 @@ describe('MulterAdapter', () => {
     expect(res.json).toHaveBeenCalledTimes(1)
   })
 
-  test('should not add file to req.locals', async () => {
-    uploadSpy = jest.fn().mockImplementationOnce((req, res, next) => {
+  test('should not add file to req.locals', () => {
+    uploadSpy.mockImplementationOnce((req, res, next) => {
       next()
     })
 
