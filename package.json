@@ -22,7 +22,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "aws-sdk": "^2.1076.0",
+    "aws-sdk": "^2.1080.0",
     "axios": "^0.26.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
@@ -32,7 +32,7 @@
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "typeorm": "^0.2.43",
+    "typeorm": "^0.2.44",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -41,15 +41,15 @@
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.1",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/module-alias": "^2.0.1",
     "@types/multer": "^1.4.7",
-    "@types/node": "^17.0.18",
+    "@types/node": "^17.0.21",
     "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "eslint": "^7.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "eslint": "^8.9.0",
     "eslint-config-standard-with-typescript": "^21.0.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
