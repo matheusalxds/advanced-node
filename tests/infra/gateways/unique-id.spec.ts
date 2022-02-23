@@ -1,19 +1,20 @@
 import { UniqueId } from '@/infra/gateways'
 
-describe('UniqueId', () => {
-  test('should call uuid.v4', () => {
-    const sut = new UniqueId(new Date(2021, 9, 10, 10, 10, 10))
+import { set, reset } from 'mockdate'
 
+describe('UniqueId', () => {
+  let sut: UniqueId
+
+  beforeAll(() => {
+    set(new Date(2021, 9, 10, 10, 10, 10))
+    sut = new UniqueId()
+  })
+
+  afterAll(() => reset())
+
+  test('should create a unique id', () => {
     const uuid = sut.uuid({ key: 'any_key' })
 
     expect(uuid).toBe('any_key_20211010101010')
-  })
-
-  test('should call uuid.v4', () => {
-    const sut = new UniqueId(new Date(2018, 2, 10, 18, 1, 0))
-
-    const uuid = sut.uuid({ key: 'any_key' })
-
-    expect(uuid).toBe('any_key_20180310180100')
   })
 })

@@ -59,6 +59,7 @@
     "jest-mock": "^27.5.1",
     "jest-mock-extended": "^2.0.4",
     "lint-staged": "^12.3.4",
+    "mockdate": "^3.0.5",
     "npm-check": "^5.9.2",
     "pg-mem": "^2.3.3",
     "supertest": "^6.2.2",
