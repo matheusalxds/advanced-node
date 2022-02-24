@@ -10,8 +10,9 @@ import {
   Repository,
   getRepository
 } from 'typeorm'
+import { DbTransaction } from '@/application/contracts'
 
-export class PgConnection {
+export class PgConnection implements DbTransaction {
   private static instance?: PgConnection
   private query?: QueryRunner
   private connection?: Connection
